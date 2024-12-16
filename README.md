@@ -1,4 +1,4 @@
-# Cara membuat Bot Discord menggunakan Javascript
+# Cara membuat Bot Discord menggunakan Javascript ([Discord.Js](https://github.com/discordjs/discord.js/releases))
 
 🧾Note: **This documentation will use Indonesian language**
 ___
@@ -7,11 +7,47 @@ ___
 
 - Telah mengaktifkan `Developer Mode`
 Hal ini akan berguna ketika kita membutuhkan sebuah ID: (Pengguna, Channel, Threads, Server) dan lain sebagainya secara cepat.
+- Telah login pada website [Discord Developer Portal](https://discord.com/developers).
 
-<div align="center">
+## Langkah 1 - Membuat Bot
 
-![Dev mode](https://media.discordapp.net/attachments/1291383328800509962/1314571099006304276/image.png?ex=6754413d&is=6752efbd&hm=785620f6f79494c8c180a3bd0b6f4827fe1728c32093a9e49a52169ea993bf9a&=&format=webp&quality=lossless&width=1097&height=571)
+Buka website **[Discord Developer Portal](https://discord.com/developers)** dan pilih **New Aplication**
+- Masuk pada Aplication/Bot
+- Pilih menu **Bot**
+- Cari bagian **"Privileged Gateway Intents"**
+- Nyalakan beberapa Intents dibawah ini:
 
-![Id](https://media.discordapp.net/attachments/1291383328800509962/1314572180855455825/image.png?ex=6754423f&is=6752f0bf&hm=e1a0c03302b985dd77f0c9bd6c090eb5ea0803e202a08ea4aa4e8c85509aa9d2&=&format=webp&quality=lossless&width=295&height=481)
+> 1. **Presence Intent**<br>
+Required for your bot to receive [Presence Update](https://discord.com/developers/docs/events/gateway#presence-update) events.
 
-</div>
+NOTE: Once your bot reaches 100 or more servers, this will require verification and approval. [**Read more here**](https://support-dev.discord.com/hc/en-us/articles/6205754771351)
+
+>2. **Server Members Intent**<br>
+Required for your bot to receive events listed under [GUILD_MEMBERS](https://discord.com/developers/docs/events/gateway#list-of-intents).
+
+NOTE: Once your bot reaches 100 or more servers, this will require verification and approval. [**Read more here**](https://support-dev.discord.com/hc/en-us/articles/6205754771351)
+
+>3. **Message Content Intent**<br>
+Required for your bot to receive [message content](https://support-dev.discord.com/hc/en-us/articles/4404772028055) in most messages.
+
+NOTE: Once your bot reaches 100 or more servers, this will require verification and approval. [**Read more here**](https://support-dev.discord.com/hc/en-us/articles/6205754771351)
+
+<br>
+
+Invite Bot ke server:
+
+- Masuk ke-Menu **Installation** <br>
+Installation Contexts
+Select the installation contexts your app supports. Apps can be installed to both users and guilds.
+
+- Pilih **Guild Install** <br>
+Install Link
+Use our provided install link or register a custom one. If you choose a custom link, users who add your app will be redirected to your URL instead of the Add App flow in Discord.
+
+- Pilih **Discord Provided Link**
+
+- Pilih **Scopes**: `aplications.commands`, `bot` - lalu **Permissions**: `Administrator` mencakup semua izin yang ada.
+- Salin link yang sudah di sediakan dan masukkan Bot ke server.
+
+
+## Langkah 2 - Memprogram Bot
